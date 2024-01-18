@@ -1,0 +1,13 @@
+\subsubsection usage Usage
+\verbatim
+<node name="tuw_aruco" pkg="tuw_aruco" type="tuw_aruco">
+  <param name="show_debug_image" type="bool" value="True" />
+  <param name="marker_dictonary" type="str" value="ARTOOLKITPLUSBCH" />
+  <param name="marker_size" type="double" value="0.06" />
+  <param name="publish_tf" type="bool" value="True" />
+  <param name="publish_markers" type="bool" value="True" />
+  <param name="publish_fiducials" type="bool" value="False" />
+  <param name="pose_estimation_enabled" type="bool" value="True" />
+</node>
+\endverbatim
+

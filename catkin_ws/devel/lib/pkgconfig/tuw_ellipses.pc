@@ -1,0 +1,8 @@
+prefix=/home/dof6/catkin_ws/devel
+
+Name: tuw_ellipses
+Description: Description of tuw_ellipses
+Version: 0.0.7
+Cflags: -I/home/dof6/catkin_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

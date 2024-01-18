@@ -1,0 +1,8 @@
+prefix=/home/dof6/catkin_ws/install
+
+Name: ur5_robotiq_moveit
+Description: Description of ur5_robotiq_moveit
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

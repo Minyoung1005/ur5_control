@@ -1,0 +1,8 @@
+
+string[] arm_joint_name
+float64[] arm_qpos
+float64[] eef_pose
+float64[] eef_quat
+float64 grasp
+---
+trajectory_msgs/JointTrajectory plan

@@ -1,0 +1,8 @@
+prefix=/home/dof6/catkin_ws/install
+
+Name: tuw_marker_pose_estimation
+Description: Description of tuw_marker_pose_estimation
+Version: 0.0.7
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

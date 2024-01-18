@@ -1,0 +1,35 @@
+\subsubsection usage Usage
+\verbatim
+<node name="tuw_ellipses" pkg="tuw_ellipses" type="tuw_ellipses">
+  <param name="show_camera_image" type="bool" value="True" />
+  <param name="show_camera_image_waitkey" type="int" value="2" />
+  <param name="debug" type="bool" value="False" />
+  <param name="plubishTF" type="bool" value="True" />
+  <param name="plubishMarker" type="bool" value="True" />
+  <param name="publishFiducials" type="bool" value="True" />
+  <param name="distorted_input" type="bool" value="True" />
+  <param name="debug_freeze" type="bool" value="False" />
+  <param name="image_skip" type="int" value="0" />
+  <param name="edge_detection" type="int" value="1" />
+  <param name="threshold_edge_detection1" type="int" value="150" />
+  <param name="threshold_edge_detection2" type="int" value="100" />
+  <param name="kernel_size_edge_detection" type="int" value="3" />
+  <param name="edge_linking" type="int" value="2" />
+  <param name="threshold_contour_min_points" type="int" value="20" />
+  <param name="threshold_polygon" type="int" value="5" />
+  <param name="filter_convex" type="bool" value="True" />
+  <param name="threshold_rotated_rect_ratio" type="double" value="0.02" />
+  <param name="ellipse_redefinement" type="bool" value="True" />
+  <param name="filter_contour_mean" type="bool" value="True" />
+  <param name="threshold_contour_mean" type="double" value="0.05" />
+  <param name="threshold_min_radius" type="double" value="0.0" />
+  <param name="threshold_max_radius" type="double" value="1.0" />
+  <param name="filter_rings" type="bool" value="True" />
+  <param name="threshold_ring_center" type="double" value="0.1" />
+  <param name="threshold_ring_ratio" type="double" value="0.1" />
+  <param name="pose_estimation" type="int" value="2" />
+  <param name="circle_diameter" type="double" value="0.1" />
+  <param name="skip_second_tf" type="bool" value="True" />
+</node>
+\endverbatim
+

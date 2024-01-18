@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="limited" default="false"  doc="If true, limits joint range [-PI, PI] on all joints." />
+  <arg name="paused" default="false" doc="Starts gazebo in paused mode" />
+  <arg name="gui" default="true" doc="Starts gazebo gui" />
+  <!-- for gripper -->
+  <arg name="sim" default="false"/>
+  <arg name="comport" default="/dev/ttyUSB0" unless="$(arg sim)"/> 
+  <arg name="baud" default="115200" unless="$(arg sim)"/> 
+  
+  <!-- startup simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <!--<arg name="world_name" default="worlds/empty.world"/>-->
+    <arg name="world_name" default="$(find ur_gazebo)/worlds/cube.world"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+
+  <!-- send robot urdf to param server -->
+  <include file="$(find ur_description)/launch/ur5_robotiq_upload.launch">
+    <arg name="limited" value="$(arg limited)"/>
+  </include>
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -x 1.0 -z 0.8" respawn="false" output="screen" />
+
+  <include file="$(find ur_gazebo)/launch/controller_utils.launch"/>
+
+  <!-- start robotiq gripper controller -->
+  <rosparam file="$(find robotiq_2f_85_gripper_gazebo)/controller/gripper_controller_robotiq.yaml" command="load"/>
+  <node name="gripper_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn gripper_controller" respawn="false" output="screen"/>
+
+  <!-- Launch action server for gripper -->
+  <include file="$(find robotiq_2f_gripper_control)/launch/robotiq_action_server.launch">
+      <arg name="comport" value="$(arg comport)" unless="$(arg sim)"/>
+      <arg name="baud" value="$(arg baud)" unless="$(arg sim)"/>
+      <arg name="stroke" value="0.085"/>
+      <arg name="joint_name" value="finger_joint"/>
+      <arg name="verbose" value="true"/>
+      <arg name="sim" value="$(arg sim)"/>
+  </include>
+
+  <!-- start ur5 joint trajectory controller -->
+  <rosparam file="$(find ur_gazebo)/controller/arm_controller_ur5.yaml" command="load"/>
+  <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn arm_controller" respawn="false" output="screen"/>
+
+  <!-- load other controllers -->
+  <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load joint_group_position_controller" />
+
+</launch>

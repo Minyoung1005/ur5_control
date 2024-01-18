@@ -1,0 +1,8 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~pose_estimation_type" : \b [int] Pose estimation type min: 0, default: 0, max: 0
+- \b "~publish_tf" : \b [bool]  min: False, default: True, max: True
+- \b "~publish_markers" : \b [bool]  min: False, default: True, max: True
+

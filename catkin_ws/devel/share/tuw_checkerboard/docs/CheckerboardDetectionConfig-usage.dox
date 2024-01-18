@@ -1,0 +1,24 @@
+\subsubsection usage Usage
+\verbatim
+<node name="tuw_checkerboard" pkg="tuw_checkerboard" type="tuw_checkerboard">
+  <param name="show_camera_image" type="bool" value="True" />
+  <param name="show_camera_image_waitkey" type="int" value="2" />
+  <param name="input_raw" type="bool" value="True" />
+  <param name="rotate_camera_image_180" type="bool" value="False" />
+  <param name="plubish_tf" type="bool" value="True" />
+  <param name="plubish_marker" type="bool" value="True" />
+  <param name="publish_fiducials" type="bool" value="False" />
+  <param name="publish_pose" type="bool" value="False" />
+  <param name="checkerboard_columns" type="int" value="8" />
+  <param name="checkerboard_rows" type="int" value="6" />
+  <param name="checkerboard_square_size" type="double" value="0.03" />
+  <param name="checkerboard_min_square_size" type="int" value="10" />
+  <param name="adaptive_thresh" type="bool" value="True" />
+  <param name="normalize_image" type="bool" value="False" />
+  <param name="filter_quads" type="bool" value="False" />
+  <param name="fast_check" type="bool" value="False" />
+  <param name="subpixelfit" type="bool" value="True" />
+  <param name="subpixelfit_window_size" type="int" value="8" />
+</node>
+\endverbatim
+

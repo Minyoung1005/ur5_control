@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="robotiq_85_mimic_finger_gazebo" params="prefix fingerprefix">    
+    <!-- Mimic joints -->
+    <gazebo>
+      <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="${prefix}${fingerprefix}_mimic_robotiq_85_1">
+        <joint>${prefix}finger_joint</joint>
+        <mimicJoint>${prefix}${fingerprefix}_inner_knuckle_joint</mimicJoint>
+        <multiplier>1.0</multiplier>
+        <offset>0.0</offset>
+      </plugin>
+      <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="${prefix}${fingerprefix}_mimic_robotiq_85_2">
+        <joint>${prefix}finger_joint</joint>
+        <mimicJoint>${prefix}${fingerprefix}_inner_finger_joint</mimicJoint>
+        <multiplier>-1.0</multiplier>
+        <offset>0.0</offset>
+      </plugin>
+    </gazebo>
+  </xacro:macro>
+
+  <xacro:macro name="robotiq_85_mimic_knuckle_gazebo" params="prefix">    
+    <gazebo>
+      <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="${prefix}mimic_robotiq_85_3">
+        <joint>${prefix}finger_joint</joint>
+        <mimicJoint>${prefix}right_outer_knuckle_joint</mimicJoint>
+        <multiplier>1.0</multiplier>
+        <offset>0.0</offset>
+      </plugin>
+    </gazebo>
+  </xacro:macro>
+
+  <xacro:macro name="robotiq_85_mimic_gazebo" params="prefix">    
+    <xacro:robotiq_85_mimic_finger_gazebo prefix="${prefix}" fingerprefix="left"/>
+    <xacro:robotiq_85_mimic_finger_gazebo prefix="${prefix}" fingerprefix="right"/>
+    <xacro:robotiq_85_mimic_knuckle_gazebo prefix="${prefix}"/>
+  </xacro:macro>
+
+</robot>

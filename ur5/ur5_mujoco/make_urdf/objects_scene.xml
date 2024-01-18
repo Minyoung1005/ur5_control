@@ -1,0 +1,19 @@
+<mujoco model="multi_objects">
+    <include file="ur5_robotiq.xml"></include>
+    <size njmax="1000" nconmax="300" />
+
+    <asset>
+        <mesh name="cylinder_0" file="cylinder_0.stl" />
+        <mesh name="cylinder_1" file="cylinder_1.stl" />
+        <mesh name="cylinder_2" file="cylinder_2.stl" />
+        <mesh name="triangular_0" file="triangular_0.stl" />
+        <mesh name="triangular_1" file="triangular_1.stl" />
+        <mesh name="triangular_2" file="triangular_2.stl" />
+        <mesh name="pentagonal" file="pentagonal.stl" />
+        <mesh name="hexagonal" file="hexagonal.stl" />
+
+    </asset>
+    <include file="objects/dounut.xml"></include>
+    <include file="objects/dounut.xml"></include>
+
+</mujoco>

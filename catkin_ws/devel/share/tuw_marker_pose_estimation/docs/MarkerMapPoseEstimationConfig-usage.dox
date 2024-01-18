@@ -1,0 +1,9 @@
+\subsubsection usage Usage
+\verbatim
+<node name="tuw_marker_pose_estimation" pkg="tuw_marker_pose_estimation" type="tuw_marker_pose_estimation">
+  <param name="pose_estimation_type" type="int" value="0" />
+  <param name="publish_tf" type="bool" value="True" />
+  <param name="publish_markers" type="bool" value="True" />
+</node>
+\endverbatim
+

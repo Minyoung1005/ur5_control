@@ -1,0 +1,34 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~show_camera_image" : \b [bool] Show camera image min: False, default: True, max: True
+- \b "~show_camera_image_waitkey" : \b [int] Time to draw the camera image in ms min: 1, default: 2, max: 1000
+- \b "~debug" : \b [bool] Shows additional debug information min: False, default: False, max: True
+- \b "~plubishTF" : \b [bool] publish tf messages min: False, default: True, max: True
+- \b "~plubishMarker" : \b [bool] plublish marker messages min: False, default: True, max: True
+- \b "~publishFiducials" : \b [bool] plublish marker messages min: False, default: True, max: True
+- \b "~distorted_input" : \b [bool] the input image is distort min: False, default: True, max: True
+- \b "~debug_freeze" : \b [bool] Freezes the input image min: False, default: False, max: True
+- \b "~image_skip" : \b [int] skip frames min: 0, default: 0, max: 100
+- \b "~edge_detection" : \b [int] Edge detection strategy min: 0, default: 1, max: 2
+- \b "~threshold_edge_detection1" : \b [int] edge detection min: 0, default: 150, max: 255
+- \b "~threshold_edge_detection2" : \b [int] edge detection min: 0, default: 100, max: 255
+- \b "~kernel_size_edge_detection" : \b [int] edge detection min: 3, default: 3, max: 7
+- \b "~edge_linking" : \b [int] Edge detection strategy min: 0, default: 2, max: 4
+- \b "~threshold_contour_min_points" : \b [int] edge detection min: 10, default: 20, max: 255
+- \b "~threshold_polygon" : \b [int] epsylon to approximate polygon min: 3, default: 5, max: 16
+- \b "~filter_convex" : \b [bool] rings only min: False, default: True, max: True
+- \b "~threshold_rotated_rect_ratio" : \b [double] ring cirlce ratio min: 0.0, default: 0.02, max: 1.0
+- \b "~ellipse_redefinement" : \b [bool] Dual ellipse redefinement min: False, default: True, max: True
+- \b "~filter_contour_mean" : \b [bool] rings only min: False, default: True, max: True
+- \b "~threshold_contour_mean" : \b [double] ring cirlce ratio min: 0.0, default: 0.05, max: 0.5
+- \b "~threshold_min_radius" : \b [double] min radius in ration to image min: 0.0, default: 0.0, max: 1.0
+- \b "~threshold_max_radius" : \b [double] max radius in ration to image min: 0.0, default: 1.0, max: 1.0
+- \b "~filter_rings" : \b [bool] rings only min: False, default: True, max: True
+- \b "~threshold_ring_center" : \b [double] ring center offsets min: 0.0, default: 0.1, max: 0.5
+- \b "~threshold_ring_ratio" : \b [double] ring cirlce ratio min: 0.0, default: 0.1, max: 1.0
+- \b "~pose_estimation" : \b [int] Estimate Pose min: 0, default: 2, max: 2
+- \b "~circle_diameter" : \b [double] ring cirlce ratio min: 0.0, default: 0.1, max: 1.0
+- \b "~skip_second_tf" : \b [bool] skips publishing the scound solution as tf min: False, default: True, max: True
+

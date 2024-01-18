@@ -1,0 +1,8 @@
+prefix=/home/dof6/catkin_ws/devel
+
+Name: autolab_core
+Description: Description of autolab_core
+Version: 0.0.14
+Cflags: -I/home/dof6/catkin_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

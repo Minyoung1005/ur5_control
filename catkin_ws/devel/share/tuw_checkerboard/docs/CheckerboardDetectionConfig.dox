@@ -1,0 +1,23 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~show_camera_image" : \b [bool] Show camera image min: False, default: True, max: True
+- \b "~show_camera_image_waitkey" : \b [int] Time to draw the camera image in ms min: 1, default: 2, max: 1000
+- \b "~input_raw" : \b [bool] the imput image is distored min: False, default: True, max: True
+- \b "~rotate_camera_image_180" : \b [bool] Rotate input camera image by 180 deg min: False, default: False, max: True
+- \b "~plubish_tf" : \b [bool] publish tf messages min: False, default: True, max: True
+- \b "~plubish_marker" : \b [bool] plublish marker messages min: False, default: True, max: True
+- \b "~publish_fiducials" : \b [bool] publish fiducials to allow 3th party pose estimation. min: False, default: False, max: True
+- \b "~publish_pose" : \b [bool] publish checkerboard pose min: False, default: False, max: True
+- \b "~checkerboard_columns" : \b [int] interior number of colomn corners min: 1, default: 8, max: 20
+- \b "~checkerboard_rows" : \b [int] interior number of row corners min: 1, default: 6, max: 20
+- \b "~checkerboard_square_size" : \b [double] checkerboard square size [m] min: 0.0, default: 0.03, max: 1.0
+- \b "~checkerboard_min_square_size" : \b [int] minimal checkerboard square size in [pix] to accept a detection min: 1, default: 10, max: 100
+- \b "~adaptive_thresh" : \b [bool] checkerboard detection flags min: False, default: True, max: True
+- \b "~normalize_image" : \b [bool] checkerboard detection flags min: False, default: False, max: True
+- \b "~filter_quads" : \b [bool] checkerboard detection flags min: False, default: False, max: True
+- \b "~fast_check" : \b [bool] checkerboard detection flags min: False, default: False, max: True
+- \b "~subpixelfit" : \b [bool] Sub-pixel accurate corner locator min: False, default: True, max: True
+- \b "~subpixelfit_window_size" : \b [int] Half of the side length of the search window [pix] min: 1, default: 8, max: 20
+
